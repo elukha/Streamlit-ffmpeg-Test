@@ -8,7 +8,7 @@ def video_download(URL):
     file_keep = "watch.py"
     f1 = "requirements.txt"
     f2 = "environment.yml"
-    files = os.listdir('.')
+    files = os.listdir('./download/')
     for file in files:
         if file != file_keep and file != f1 and file != f2:
             if os.path.isfile(file): # ファイルであるか確認
@@ -16,7 +16,7 @@ def video_download(URL):
 
     # カスタマイズしたオプションを設定
     ydl_opts = {
-        'outtmpl': './video.mp4',  # ファイル名と保存場所を指定
+        'outtmpl': './download/video.mp4',  # ファイル名と保存場所を指定
         'format' :"bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]",
         'progress_hooks': [progress_hook],
     }
